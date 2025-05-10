@@ -1,0 +1,162 @@
+/* General */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* Header */
+.rd-header {
+  background: #ff5c00;
+  color: white;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.rd-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rd-header-logo {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.rd-search-bar {
+  flex: 1;
+  margin: 8px 12px;
+}
+
+.rd-search-bar input {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.rd-header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.rd-cart-icon {
+  position: relative;
+  font-size: 20px;
+}
+
+.rd-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.rd-header-text {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .rd-header-text {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+/* Categorías */
+.rd-categorias {
+  padding: 10px;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  background: white;
+  margin-bottom: 16px;
+}
+
+.rd-categorias button {
+  background: #eee;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* Productos */
+.rd-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.rd-producto {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 8px;
+}
+
+.rd-producto img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.rd-nombre {
+  font-size: 14px;
+  margin: 8px 0 4px;
+}
+
+.rd-precio {
+  color: #e91e63;
+  font-weight: bold;
+}
+
+/* Footer */
+.rd-footer-mobile {
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.rd-footer-mobile a {
+  text-align: center;
+  font-size: 12px;
+  color: #444;
+  text-decoration: none;
+}
+
+.rd-footer-mobile a i {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
