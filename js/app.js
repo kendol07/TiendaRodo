@@ -1,4 +1,5 @@
 import { initHome } from './main.js';
+import { initCartPage } from './cartPage.js';
 import { updateCartCount } from './render.js';
 
 $(function() {
@@ -9,6 +10,8 @@ $(function() {
         updateCartCount(countEl);
         if (section === 'home') {
           initHome();
+        } else if (section === 'cart') {
+          initCartPage();
         }
       } else {
         $('#content').html('<p>Error al cargar la sección.</p>');
