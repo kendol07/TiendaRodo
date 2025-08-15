@@ -192,47 +192,29 @@
 
     <div class="header-right">
       <!-- Carrito visible en móvil y escritorio con cantidad -->
-      <a href="cart.html" class="cart-icon" style="color:white;">
+      <a href="#" data-section="cart" class="cart-icon" style="color:white;">
         <i class="fa fa-shopping-cart"></i>
         <span class="count">0</span>
       </a>
 
       <!-- En PC: texto -->
       <div class="header-text">
-        <a href="index.html" style="color:white; text-decoration:none;">Inicio</a>
-        <a href="categories.html" style="color:white; text-decoration:none;">Categorías</a>
-        <a href="account.html" style="color:white; text-decoration:none;">Cuenta</a>
+        <a href="#" data-section="home" style="color:white; text-decoration:none;">Inicio</a>
+        <a href="#" data-section="categories" style="color:white; text-decoration:none;">Categorías</a>
+        <a href="#" data-section="account" style="color:white; text-decoration:none;">Cuenta</a>
       </div>
     </div>
   </header>
-
-  <div class="slider">
-    <div class="slider-track">
-      <div class="slide">🔥 Hasta 50% en Electrónica</div>
-      <div class="slide">🛍️ 2x1 en Ropa de Verano</div>
-      <div class="slide">🏠 Descuentos en Hogar</div>
-    </div>
-  </div>
-
-
-  <div class="categorias">
-    <button data-category="Todos" class="active">Todos</button>
-    <button data-category="Electrónica">Electrónica</button>
-    <button data-category="Ropa">Ropa</button>
-    <button data-category="Hogar">Hogar</button>
-    <button data-category="Ofertas">Ofertas</button>
-    <button data-category="Zapatos">Zapatos</button>
-  </div>
-
-  <section class="productos"></section>
+  <div id="content"></div>
 
   <footer class="footer-mobile">
-    <a href="index.html"><i class="fa fa-home"></i>Inicio</a>
-    <a href="categories.html"><i class="fa fa-list"></i>Categorías</a>
-    <a href="cart.html"><i class="fa fa-shopping-cart"></i>Carrito</a>
-    <a href="account.html"><i class="fa fa-user"></i>Cuenta</a>
+    <a href="#" data-section="home"><i class="fa fa-home"></i>Inicio</a>
+    <a href="#" data-section="categories"><i class="fa fa-list"></i>Categorías</a>
+    <a href="#" data-section="cart"><i class="fa fa-shopping-cart"></i>Carrito</a>
+    <a href="#" data-section="account"><i class="fa fa-user"></i>Cuenta</a>
   </footer>
 
-  <script type="module" src="main.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
