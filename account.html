@@ -3,29 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <title>Tienda Rodo</title>
+  <title>Cuenta - RodoShop</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <header>
     <div class="header-left">
       <div class="header-logo">RodoShop</div>
     </div>
-
     <div class="search-bar">
       <input type="text" placeholder="Buscar productos...">
     </div>
-
     <div class="header-right">
-      <!-- Carrito visible en móvil y escritorio con cantidad -->
       <a href="cart.html" class="cart-icon" style="color:white;">
         <i class="fa fa-shopping-cart"></i>
         <span class="count">0</span>
       </a>
-
-      <!-- En PC: texto -->
       <div class="header-text">
         <a href="index.html" style="color:white; text-decoration:none;">Inicio</a>
         <a href="categories.html" style="color:white; text-decoration:none;">Categorías</a>
@@ -34,25 +28,20 @@
     </div>
   </header>
 
-  <div class="slider">
-    <div class="slider-track">
-      <div class="slide">🔥 Hasta 50% en Electrónica</div>
-      <div class="slide">🛍️ 2x1 en Ropa de Verano</div>
-      <div class="slide">🏠 Descuentos en Hogar</div>
-    </div>
-  </div>
-
-
-  <div class="categorias">
-    <button data-category="Todos" class="active">Todos</button>
-    <button data-category="Electrónica">Electrónica</button>
-    <button data-category="Ropa">Ropa</button>
-    <button data-category="Hogar">Hogar</button>
-    <button data-category="Ofertas">Ofertas</button>
-    <button data-category="Zapatos">Zapatos</button>
-  </div>
-
-  <section class="productos"></section>
+  <main class="account-container">
+    <section class="profile">
+      <h1>Mi Cuenta</h1>
+      <p><strong>Nombre:</strong> Juan Pérez</p>
+      <p><strong>Correo:</strong> juan@example.com</p>
+    </section>
+    <section class="orders">
+      <h2>Pedidos Recientes</h2>
+      <ul class="order-list">
+        <li>#1001 - Auriculares inalámbricos ($59.99)</li>
+        <li>#1000 - Camiseta deportiva ($29.99)</li>
+      </ul>
+    </section>
+  </main>
 
   <footer class="footer-mobile">
     <a href="index.html"><i class="fa fa-home"></i>Inicio</a>
@@ -61,6 +50,12 @@
     <a href="account.html"><i class="fa fa-user"></i>Cuenta</a>
   </footer>
 
-  <script type="module" src="main.js"></script>
+  <script type="module">
+    import { updateCartCount } from './render.js';
+    document.addEventListener('DOMContentLoaded', () => {
+      const countEl = document.querySelector('.cart-icon .count');
+      updateCartCount(countEl);
+    });
+  </script>
 </body>
 </html>
