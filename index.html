@@ -194,7 +194,7 @@
       <!-- Carrito visible en móvil y escritorio con cantidad -->
       <a href="#" class="cart-icon" style="color:white;">
         <i class="fa fa-shopping-cart"></i>
-        <span class="count">3</span>
+        <span class="count">0</span>
       </a>
 
       <!-- En PC: texto -->
@@ -216,35 +216,15 @@
 
 
   <div class="categorias">
-    <button>Electrónica</button>
-    <button>Ropa</button>
-    <button>Hogar</button>
-    <button>Ofertas</button>
-    <button>Zapatos</button>
+    <button data-category="Todos" class="active">Todos</button>
+    <button data-category="Electrónica">Electrónica</button>
+    <button data-category="Ropa">Ropa</button>
+    <button data-category="Hogar">Hogar</button>
+    <button data-category="Ofertas">Ofertas</button>
+    <button data-category="Zapatos">Zapatos</button>
   </div>
 
-  <section class="productos">
-    <div class="producto">
-      <img src="https://sydney.pe/wp-content/uploads/2023/09/ropa-para-verano.png" alt="Producto 1">
-      <div class="nombre">Ropa de verano</div>
-      <div class="precio">$14.99</div>
-    </div>
-    <div class="producto">
-      <img src="https://sydney.pe/wp-content/uploads/2023/09/ropa-para-verano.png" alt="Producto 2">
-      <div class="nombre">Lámpara LED</div>
-      <div class="precio">$11.49</div>
-    </div>
-    <div class="producto">
-      <img src="https://sydney.pe/wp-content/uploads/2023/09/ropa-para-verano.png" alt="Producto 3">
-      <div class="nombre">Zapatos casuales</div>
-      <div class="precio">$19.90</div>
-    </div>
-    <div class="producto">
-      <img src="https://sydney.pe/wp-content/uploads/2023/09/ropa-para-verano.png" alt="Producto 4">
-      <div class="nombre">Set de Brochas</div>
-      <div class="precio">$4.75</div>
-    </div>
-  </section>
+  <section class="productos"></section>
 
   <footer class="footer-mobile">
     <a href="#"><i class="fa fa-home"></i>Inicio</a>
@@ -253,6 +233,6 @@
     <a href="#"><i class="fa fa-user"></i>Cuenta</a>
   </footer>
 
+  <script type="module" src="main.js"></script>
 </body>
-  <script src="interacciones.js"></script>
 </html>
