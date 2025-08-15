@@ -1,11 +1,15 @@
 import { products } from './products.js';
 import { renderProducts, bindAddToCart, updateCartCount } from './render.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+export function initHome() {
   const productContainer = document.querySelector('.productos');
   const countEl = document.querySelector('.cart-icon .count');
   const categories = document.querySelector('.categorias');
   const searchInput = document.querySelector('.search-bar input');
+
+  if (!productContainer || !categories || !searchInput) {
+    return;
+  }
 
   let currentCategory = 'Todos';
   let currentSearch = '';
@@ -43,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const card = e.target.closest('.producto');
     if (card && !e.target.classList.contains('add-cart')) {
       card.style.boxShadow = '0 0 0 4px rgba(255, 92, 0, 0.3)';
-      setTimeout(() => card.style.boxShadow = '', 250);
+      setTimeout(() => (card.style.boxShadow = ''), 250);
     }
   });
 
@@ -51,6 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
   cartIcon.addEventListener('click', () => {
     cartIcon.style.transition = 'transform 0.1s';
     cartIcon.style.transform = 'scale(1.2)';
-    setTimeout(() => cartIcon.style.transform = '', 200);
+    setTimeout(() => (cartIcon.style.transform = ''), 200);
   });
-});
+}
