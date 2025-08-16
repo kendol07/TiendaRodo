@@ -22,6 +22,7 @@ export function initCartPage() {
     if (items.length === 0) {
       listEl.innerHTML = '<p>Tu carrito está vacío.</p>';
       totalEl.textContent = formatCurrency(0);
+      updateCartCount(countEl);
       return;
     }
 
@@ -46,6 +47,7 @@ export function initCartPage() {
     });
 
     totalEl.textContent = formatCurrency(getCartTotal());
+    updateCartCount(countEl);
   };
 
   listEl.addEventListener('click', e => {

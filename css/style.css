@@ -264,6 +264,12 @@ header {
   padding: 16px;
 }
 
+.cart-page h1 {
+  text-align: center;
+  color: #ff5c00;
+  margin-bottom: 16px;
+}
+
 .cart-items {
   display: flex;
   flex-direction: column;
@@ -308,6 +314,10 @@ header {
   cursor: pointer;
 }
 
+.cart-item .qty-btn:hover {
+  background: #e0e0e0;
+}
+
 .cart-item .qty {
   min-width: 20px;
   text-align: center;
@@ -337,6 +347,10 @@ header {
   cursor: pointer;
 }
 
+.cart-item .remove-item:hover {
+  color: #e14e00;
+}
+
 .cart-summary {
   display: flex;
   justify-content: space-between;
@@ -348,5 +362,9 @@ header {
   font-size: 18px;
   font-weight: bold;
   border-top: 4px solid #ff5c00;
+}
+
+.cart-summary .cart-total {
+  color: #e91e63;
 }
 

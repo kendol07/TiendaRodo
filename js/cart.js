@@ -51,3 +51,4 @@ export function removeItem(id) {
   const cart = getCart().filter(itemId => itemId !== id);
   saveCart(cart);
 }
+
