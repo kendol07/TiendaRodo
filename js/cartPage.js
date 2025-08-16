@@ -3,7 +3,8 @@ import {
   getCartTotal,
   addToCart,
   removeFromCart,
-  removeItem
+  removeItem,
+  formatCurrency
 } from './cart.js';
 import { updateCartCount } from './render.js';
 
@@ -11,9 +12,6 @@ export function initCartPage() {
   const listEl = document.querySelector('.cart-items');
   const totalEl = document.querySelector('.cart-total');
   const countEl = document.querySelector('.cart-icon .count');
-
-  const formatCurrency = num =>
-    num.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
 
   const render = () => {
     const items = getCartItems();

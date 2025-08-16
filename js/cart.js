@@ -10,6 +10,9 @@ function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
 }
 
+export const formatCurrency = num =>
+  num.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
+
 export function addToCart(id) {
   const cart = getCart();
   cart.push(id);
