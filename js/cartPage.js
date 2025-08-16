@@ -1,4 +1,4 @@
-import { getCartItems, getCartTotal, removeItem } from './cart.js';
+import { getCartItems, getCartTotal, addToCart, removeFromCart, removeItem } from './cart.js';
 import { updateCartCount } from './render.js';
 
 export function initCartPage() {
@@ -23,7 +23,12 @@ export function initCartPage() {
         <img src="${item.image}" alt="${item.name}">
         <div class="item-info">
           <div class="item-name">${item.name}</div>
-          <div class="item-price">$${item.price.toFixed(2)} x ${item.qty}</div>
+          <div class="item-price">$${item.price.toFixed(2)}</div>
+          <div class="item-qty">
+            <button class="qty-btn decrease" data-id="${item.id}">-</button>
+            <span class="qty">${item.qty}</span>
+            <button class="qty-btn increase" data-id="${item.id}">+</button>
+          </div>
         </div>
         <div class="item-total">$${(item.price * item.qty).toFixed(2)}</div>
         <button class="remove-item" data-id="${item.id}">&times;</button>
@@ -35,12 +40,18 @@ export function initCartPage() {
   };
 
   listEl.addEventListener('click', e => {
+    const id = parseInt(e.target.dataset.id, 10);
     if (e.target.classList.contains('remove-item')) {
-      const id = parseInt(e.target.dataset.id, 10);
       removeItem(id);
-      render();
-      updateCartCount(countEl);
+    } else if (e.target.classList.contains('increase')) {
+      addToCart(id);
+    } else if (e.target.classList.contains('decrease')) {
+      removeFromCart(id);
+    } else {
+      return;
     }
+    render();
+    updateCartCount(countEl);
   });
 
   render();
