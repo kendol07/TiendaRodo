@@ -259,9 +259,9 @@ header {
 }
 
 .cart-page {
-  padding: 16px;
-  max-width: 600px;
   margin: 0 auto;
+  max-width: 600px;
+  padding: 16px;
 }
 
 .cart-items {
