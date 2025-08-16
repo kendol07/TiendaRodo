@@ -315,13 +315,45 @@ header {
 }
 
 .cart-summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background: white;
-  padding: 12px;
+  padding: 16px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  font-size: 18px;
+  font-size: 16px;
+}
+
+.cart-summary h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.summary-row.total {
+  font-weight: bold;
+  border-top: 1px solid #eee;
+  padding-top: 8px;
+  margin-top: 8px;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: #ff5c00;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background: #e14e00;
 }
 
