@@ -3,6 +3,8 @@ import { updateCartCount } from './render.js';
 
 export function initCartPage() {
   const listEl = document.querySelector('.cart-items');
+  const subtotalEl = document.querySelector('.cart-subtotal');
+  const shippingEl = document.querySelector('.cart-shipping');
   const totalEl = document.querySelector('.cart-total');
   const countEl = document.querySelector('.cart-icon .count');
 
@@ -12,6 +14,8 @@ export function initCartPage() {
 
     if (items.length === 0) {
       listEl.innerHTML = '<p>Tu carrito está vacío.</p>';
+      subtotalEl.textContent = '$0.00';
+      shippingEl.textContent = '$0.00';
       totalEl.textContent = '$0.00';
       return;
     }
@@ -31,7 +35,13 @@ export function initCartPage() {
       listEl.appendChild(row);
     });
 
-    totalEl.textContent = '$' + getCartTotal().toFixed(2);
+    const subtotal = getCartTotal();
+    const shipping = subtotal > 0 ? 5 : 0;
+    const total = subtotal + shipping;
+
+    subtotalEl.textContent = '$' + subtotal.toFixed(2);
+    shippingEl.textContent = '$' + shipping.toFixed(2);
+    totalEl.textContent = '$' + total.toFixed(2);
   };
 
   listEl.addEventListener('click', e => {
